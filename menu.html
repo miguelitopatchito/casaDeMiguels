@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name =“viewport” content =“width=device-width, initial-scale=1” />
+<title>Gift List</title>
+  <style>
+    html, body {
+      height:100%;
+    }
+
+    * {
+      box-sizing:border-box;
+    }
+
+    h1 {
+      text-align:center;
+    }
+
+    body {
+      background-color: tan;
+    }
+
+    img {
+      box-shadow: 10px 10px 5px #ccc;
+      border-radius:3px;
+    }
+
+    .center {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, 300px);
+      justify-content: center;
+      position:absolute;
+      text-align: center;
+      left:50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      padding:15px;
+
+    }
+
+
+    /* Three image containers (use 25% for four, and 50% for two, etc) */
+    .column {
+      margin: auto;
+      float:left;
+      width:50%;
+      padding:15px;
+
+
+    }
+
+    .column img {
+      margin-top:10px;
+      margin: auto;
+      width:50%;
+
+
+    }
+
+    .row:after {
+      margin: auto;
+      content: "";
+      display: table;
+      clear: both;
+      width:50%;
+      padding:15px;
+    }
+
+
+
+/* Clear floats after image containers */
+
+</style>
+</head>
+
+
+<body>
+  <header>
+    <h1>Gift List</h1>
+  </header>
+
+<div class="center">
+  <div class="row">
+    <div class="column">
+      <a href="contacts.html">
+        <img src="contacts.png" alt ="contacts icon">
+      </a>
+
+      <a href="calendar.html">
+        <img src="calendar.png" alt ="calendar icon">
+      </a>
+    </div>
+
+
+    <div class="column">
+      <a href="list.html">
+        <img src="list.png" alt ="list icon">
+      </a>
+      <a href="login.html">
+        <img src="login.png" alt ="login icon">
+      </a>
+    </div>
+  </div>
+</div>
+
+ <main>
+
+
+
+ </main>
+ </body>
+</html>

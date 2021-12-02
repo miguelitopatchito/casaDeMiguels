@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+ <head>
+<link rel="stylesheet" type="text/css" href="list.css">
+
+ <title>To-Do List App</title>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script>
+ //JQuery to strike through P element on double click
+ $(document).ready(function(){
+   $("p").dblclick(function(){
+     $(this).toggleClass("strikethru");
+   });
+ });
+  //function that Creates new P element and appends to Div with ID="list"
+  function addItem(itemInput) {
+   var newItem = document.createElement("p");
+   newItem.innerHTML = document.getElementById("box").value;
+  // newItem.ondblclick = strikeItem;
+   document.getElementById("list").appendChild(newItem);
+   saveList();
+  }
+
+  //Saves list to local storage (still need to figure how to store so other users can access)
+  function saveList() {
+   localStorage.storedList = document.getElementById("list").innerHTML;
+  }
+  function loadList() {
+   document.getElementById("list").innerHTML = localStorage.storedList;
+   for(var i = 0; i < list.children.length; i++) {
+    //list.children[i].ondblclick = removeItem;
+   }
+  }
+  //function removeItem() {
+    //document.getElementById("list").removeChild(this);
+  //  saveList();
+  //}
+  //function strikeItem() {
+    //document.write(newItem.strike());
+    //saveList();
+  //}
+  //function strike(newItem){
+
+  //}
+  //TRYING TO CLEAR THE FUCKING INPUT AFTER BUTTON CLICK
+//  document.getElementById('#addbtn')
+  //.addEventListener('click', function () {
+//  const itemInput = document.getElementById('#box');
+
+//  itemInput.value='';
+//});
+
+ </script>
+ <style>
+
+ /* MOVED TO STYLE SHEET
+  .header {
+    height:75px;
+    width: 350px;
+    background: linear-gradient(90deg, tan 0%, black 100%);
+    color:white;
+    float: center;
+    padding:10px;
+    margin:20px;
+    text-align:center;
+    font-size:24px;
+  }
+  .app {
+    height:600px;
+    width: 350px;
+    background-color:tan;
+    float: center;
+    padding:10px;
+    margin:20px;
+  }
+  input[type="button"] {
+   background-color: black;
+   color:white;
+  }
+  .strikethru{
+    text-decoration:line-through
+  }
+  */
+ </style>
+</head>
+<body>
+ <div class="header">
+  <img src="" style="float: left;">
+  <p>Gift List</p>
+ </div>
+ <div class="app">
+  <!--<p style="font-size:18px; font-style:bold;">Gift List Itemso</p>-->
+  <h3>Gift List Items</h3>
+  <p>Double click an item to mark as done, double click again to umark</p>
+  <input type="text" id="box" placeholder ="Enter New Items Here" value=""/>
+  <br/>
+  <input id="addbtn" type="button" value="Add item"  onclick="addItem();"/>
+  <br/>
+   <div  id="list"></div>
+ </div>
+ <!--loads list from local storage-->
+ <script>
+  if(localStorage.storedList) {
+   loadList();
+  }
+ </script>
+</body>
+</html>

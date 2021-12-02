@@ -1,0 +1,26 @@
+  .header {
+    height:75px;
+    width: 350px;
+    background: linear-gradient(90deg, tan 0%, black 100%);
+    color:white;
+    float: center;
+    padding:10px;
+    margin:20px;
+    text-align:center;
+    font-size:24px;
+  }
+  .app {
+    height:600px;
+    width: 350px;
+    background-color:tan;
+    float: center;
+    padding:10px;
+    margin:20px;
+  }
+  input[type="button"] {
+   background-color: black;
+   color:white;
+  }
+  .strikethru{
+    text-decoration:line-through
+  }

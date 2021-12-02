@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name =“viewport” content =“width=device-width, initial-scale=1” />
+<title>Gift List</title>
+<style>
+
+  h1 {
+    text-align:center;
+  }
+
+  body {
+    background-color: tan;
+  }
+/* buttons  */
+  .next {
+
+    float:right;
+  }
+  .back {
+
+    float:left;
+  }
+  /* brown circle */
+  .circle {
+    width:350px;
+    height:350px;
+    background:brown;
+    margin:10% auto;
+    border-radius:50%;
+    position:relative;
+  }
+/* text within circle */
+  .content {
+    position:absolute;
+    width:335px;
+    height:auto;
+    top:50%;
+    transform:translateY(-50%);
+    text-align:center;
+    font-family:Arial;
+    color:#fff;
+    text-transform:capitalize;
+  }
+
+  .back, .next {
+    margin-left: 30%;
+    margin-right: 30%;
+  }
+
+  .signup {
+    height:20px;
+    width:99%;
+    display:flex;
+    flex-wrap:wrap;
+    text-align:center;
+
+    padding:10px;
+    font-size:1em;
+    position:absolute;
+    justify-content:center;
+    text-decoration:none;
+    outline:none;
+    color:black;
+    background-color:brown;
+    border-width:2px;
+    border-style:solid;
+    border-radius:15px;
+    text-shadow: 2px 2px 4px white;
+    font-family:"Courier New";
+  }
+</style>
+</head>
+
+
+<body>
+  <header>
+    <h1>Gift List</h1>
+  </header>
+
+ <main>
+   <!--- div container -->
+
+   <div class="circle">
+     <div  class="content">
+       <h2 id=circleContent></h2>
+     </div>
+    </div>
+    <button class = "back" id=backButton type="button" onclick="back_click()">Back</button>
+    <button class = "next" id=nextButton type="button" onclick="next_click()">Next</button>
+    <br><br><br><br><br>
+    <!--custom a button to nav to log in-->
+    <a class = "signup" id=signButton href="signin.html"> Sign up/Log in</a>
+  <script>
+  // Array holding circle content text//
+  var welcomeText = ["Embrace the Gift of Giving","Sign up, join someone's list and see their wish!","Call dibs, update list and communicate with other guests","all actions between guests are hidden from the creator until a locked date", "This prevents a lot of issues in traditional gift list making and sharing", "...but most importantly, it enchances the gift giving experience for everyone!"];
+  //placeholder variable
+  var currentPosition =0;
+  //setting buttons before click
+  document.getElementById("circleContent").innerHTML = welcomeText[currentPosition];
+  if (currentPosition == 0) backButton.style.visibility = 'hidden';
+  else  backButton.style.visibility = 'visible';
+    if (currentPosition == 5)  nextButton.style.visibility = 'hidden';
+    else {
+          nextButton.style.visibility = 'visible';
+    }
+
+//functions setting buttons after click, i think this code is longer than necessary but idk what to do with it
+  function next_click() {
+    currentPosition++;
+    document.getElementById("circleContent").innerHTML = welcomeText[currentPosition];
+    if  (currentPosition == 5)  nextButton.style.visibility = 'hidden';
+
+        if (currentPosition == 0)  backButton.style.visibility = 'hidden';
+        else {
+                document.getElementById('backButton').style.visibility = 'visible';
+             }
+    }
+
+  function back_click(){
+    currentPosition--;
+    document.getElementById("circleContent").innerHTML = welcomeText[currentPosition];
+      if (currentPosition == 0) backButton.style.visibility = 'hidden';
+      else {
+            document.getElementById('backButton').style.visibility = 'visible';
+            }
+        if  (currentPosition <= 5)  nextButton.style.visibility = 'visible';
+  }
+  </script>
+
+
+ </main>
+ </body>
+</html>
