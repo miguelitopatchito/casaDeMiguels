@@ -1,3 +1,4 @@
+<!--author: michael Patchett-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,14 +17,14 @@
 
 	<div class="container">
 		<header class="hero">
-			<a href="index.html">
+			<a href="book.html">
 				<a href="contact-profile.html">
 					<i class="fas fa-chevron-circle-left back-btn"></i>
 				</a>
-			</a>
+			
 			<div class="hero-info">
 				<h1 class="name">New Contact</h1>
-				<p class="relationship-hero friend">  friend </p>
+				<p class="relationship-hero friend">New Friend </p>
 			</div>
 		</header>
 	<form id="inputs">
@@ -69,15 +70,19 @@
 
 		<section class="button-container">
 
+
 			<div class="update-contact">
 				<i  class="fas fa-check-circle icon-gradient"></i>
-
-				<button type="submit" id="save-button" onlclick="addCont"  class="button">Save Contact</button>
+			<!--	<a href="contact-profile.html0"></a>-->
+				<button   type="submit" id="save-button"   class="button">Save Contact</button>
 
 			</div>
+                    <!--trying to put data into a different element, pre preformats text
 			<div id="msg">
 				<pre></pre>
 		  </div>
+                    -->
+
 		</section>
 </form>
 		<section class="button-container">
@@ -92,4 +97,39 @@
 
 
 </body>
+<script>
+    
+let contactInfoArr = [];
+
+const gotime = function go(){
+  window.location.href="contact-profile.html";
+};
+const addCont = (ev)=> {
+  ev.preventDefault();
+  let contactInfo = {
+    id: Date.now(),
+    name: document.getElementById('name-input').value,
+    relationship: document.getElementById('relationship-input'.value),
+    phone: document.getElementById('phone').value,
+    email: document.getElementById('email').value,
+    address: document.getElementById('address').value
+  }
+  contactInfoArr.push(contactInfo);
+  //document.querySelector('form').reset();
+
+  console.warn('added', {contactInfoArr});
+  //let pre = document.querySelector('#name');
+  //pre.textContent = '\n' + JSON.stringify(contactInfoArr, '\t', 1);
+
+  localStorage.setItem('MyContactList', JSON.stringify(contactInfoArr));
+}
+
+
+document.addEventListener ('DOMContentLoaded',  ()=>{
+  document.getElementById('save-button').addEventListener('click',addCont);
+  document.getElementById('save-button').addEventListener('click', gotime);
+});
+     
+     
+</script>
 </html>

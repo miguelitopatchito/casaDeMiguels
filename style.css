@@ -61,7 +61,7 @@ ul{
 }
 
 hr{
-	border: 1px solicontactd #494a4b;
+	border: 1px solid  #494a4b;
 }
 
 .list__item{
@@ -92,13 +92,13 @@ hr{
 	padding:4px;
 	width:10px;
 	height:10px;
-	margin-top:50%
+	margin-top:50%;
 	margin-bottom:50%;
 	margin-left:3px;
-  border-radius:5px;
-  background-color:blue;
-  color:white;
-  display:flex;
+        border-radius:5px;
+        background-color:blue;
+        color:white;
+        display:flex;
 
   opacity:0.7;
 }

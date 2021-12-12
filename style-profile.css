@@ -26,6 +26,22 @@ body{
 	padding-left: 1em;
 }
 
+.button-container{
+	background: linear-gradient(90deg, tan 0%, black 100%);		 
+	padding: 2em 3.5em;
+	 
+}
+
+
+.button{
+	 background-color:transparent;	
+	 border: none;
+	 color: #fff;
+	 font-size: 1.3em;
+	 padding-left: 1.5em;
+	 outline: none;
+}
+
 .contact-info{
 	padding: 3em 1.5em;
 }

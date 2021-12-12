@@ -1,3 +1,4 @@
+<!--author: michael Patchett-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,59 +10,100 @@
 	<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 
 		<script src="saveScript.js"></script>
+
     <script src="https://kit.fontawesome.com/6b20b1c14d.js" crossorigin="anonymous"></script>
 	<title>Contact Profile</title>
 </head>
-<body>
-
+<body >
+    <form>
 	<div class="container">
 		<header class="hero">
 			<a href="index.html">
 				<i  class="fas fa-chevron-circle-left back-btn"></i>
 			</a>
 			<div class="hero-info">
-				<h1 id="name" class="name">Jane Doe</h1>
-				<p id="relationship" class="relationship friend">Friend</p>
+				<h1 id="namePro" class="name">Jane Doe</h1>
+				<p id="relationshipPro" class="relationship friend">Friend</p>
 			</div>
 		</header>
 
-		<section class="contact-info">
+		<section id="pushinfo" class="contact-info">
 
 			<div id="phone-info" class="info-line">
 				<i class="fas fa-phone icon-gradient"></i>
-				<p id ="phone-num" class="phone-number">888.888.888</p>
+				<p id ="phone-numPro" class="phone-number"></p>
 			</div>
 
 
 
 			<div id="text-info" class="info-line">
 				<i class="fas fa-sms icon-gradient"></i>
-				<p class="sms">Send Message</p>
+				<p class="sms"></p>
 			</div>
 
 
 
 			<div id="email-info" class="info-line">
 				<i class="fas fa-envelope icon-gradient"></i>
-				<p id="email" class="email">jane.doe@example.com</p>
+				<p id="email" class="email"></p>
 			</div>
 
 
 
 			<div id="address-info" class="info-line">
 				<i id="location" class="fas fa-map-marker-alt icon-gradient"></i>
-				<p id = "address" class="address">888 Example St</p>
+				<p id = "address" class="address"></p>
 			</div>
+                    </form>
 		</section>
-
-		<a href="edit.html">
-			<section class="edit-contact">
-				<div class="edit-button">
-					<i class="fas fa-cog icon-gradient"></i>
+            <!-- waiting on Peter's PHP to send invite links-->
+            <!--needs better styling-->
+		
+			<section class="button-container">
+			
+				<div class="update-contact">
+					
+					<button class="button">Invite Contact to Edit List</button>
 				</div>
-			</section>
-		</a>
+			
+		</section>
+		
 	</div>
 
 </body>
+<script>
+//window.addEventListener('load', function (){
+	//	if(localStorage.getItem('MyContactList') != null){
+		//	document.getElementById('phone-num').innerHTML = contactInfoArr[5];
+
+		//}
+
+//});
+window.addEventListener('load', ()=>{
+            if(localStorage.getItem('MyContactList') !== null){
+		const contactData = (localStorage.MyContactList);
+                const stringy = JSON.stringify(contactData);
+                document.getElementById('namePro').innerHTML = '\n' + JSON.parse(contactData, '/t', name);
+            }
+        });
+
+
+
+//document.addEventListener ('DOMContentLoaded', function (){
+		//if(localStorage.getItem('MyContactList') !== null){
+			
+
+			//document.getElementById('namePro').innerHTML=contactInfoArr[1];
+                        
+     // document.getElementById('phone-numPro').textContent = ('\n' + JSON.stringify(contactInfoArr, phone, '/t'));
+ //    document.getElement('relationshipPro').innerHTML=MyContactList, relationship;
+   //   document.getElementById('phone-numPro').innerHTML = MyContactList, phone;
+
+
+
+		
+
+
+
+</script>
 </html>
